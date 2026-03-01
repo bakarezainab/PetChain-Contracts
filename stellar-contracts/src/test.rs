@@ -7,6 +7,7 @@ mod test_vet {
     use crate::{Gender, PetChainContract, PetChainContractClient, PrivacyLevel, Species};
     use soroban_sdk::{testutils::Address as _, Address, Env, String};
 
+    #[allow(dead_code)]
     fn register_test_pet(
         client: &PetChainContractClient,
         env: &Env,
@@ -747,7 +748,7 @@ mod test {
 
     #[test]
     fn test_vet_reviews() {
-        let (env, admin, client) = setup_test();
+        let (env, _admin, client) = setup_test();
         let owner = Address::generate(&env);
         let vet = Address::generate(&env);
 

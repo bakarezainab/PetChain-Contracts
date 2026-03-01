@@ -2571,14 +2571,13 @@ impl PetChainContract {
             let allergies = Vec::<Allergy>::from_xdr(&env, &a_bytes).unwrap_or(Vec::new(&env));
 
             // Log access
-            let log = EmergencyAccessLog {
-                pet_id,
-                accessed_by: env.current_contract_address(),
-                timestamp: env.ledger().timestamp(),
-            };
+            // let _log = EmergencyAccessLog {
+            //     pet_id,
+            //     accessed_by: env.current_contract_address(),
+            //     timestamp: env.ledger().timestamp(),
+            // };
 
-            // Simplified: Store log in a list
-            let log_key = DataKey::Pet(pet_id); // Or a specific log key
+            // let _log_key = DataKey::Pet(pet_id); // Or a specific log key
             // Skipping detailed logging for now to ensure compile.
 
             EmergencyInfo {
